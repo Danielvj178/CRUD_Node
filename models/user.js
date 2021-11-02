@@ -35,6 +35,8 @@ const UserSchema = Schema({
 UserSchema.methods.toJSON = function () {
     //Con esto se eliminan las propiedades version y password al retornar el usuario después de registrarlo
     const { __v, password, ...restUser } = this.toObject()
+    restUser.uid = restUser._id
+    delete restUser._id
     return restUser
 }
 

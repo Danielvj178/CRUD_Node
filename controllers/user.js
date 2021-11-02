@@ -75,7 +75,9 @@ const deleteUsers = async (req, res = response) => {
     // Borrado lógico
     const user = await User.findByIdAndUpdate(id, { status: false })
 
-    res.json(user)
+    res.json(
+        user
+    )
 }
 
 module.exports = {

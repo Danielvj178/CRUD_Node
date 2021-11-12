@@ -36,7 +36,7 @@
                 .then(resp => {
                     console.log(resp);
                     localStorage.setItem('email', resp.user.email);
-                    location.reload();
+                    //location.reload();
                 })
                 .catch(e => {
                     console.log(e)

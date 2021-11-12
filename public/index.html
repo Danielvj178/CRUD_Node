@@ -24,7 +24,9 @@
         function handleCredentialResponse(response) {
             const body = { id_token: response.credential }
 
-            fetch('http://localhost:8000/api/auth/google', {
+            let url = (window.location.hostname.includes('localhost')) ? 'http://localhost:8000' : 'https://crud-server-base.herokuapp.com';
+
+            fetch(`${url}/api/auth/google`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
